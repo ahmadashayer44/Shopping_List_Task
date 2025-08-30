@@ -42,6 +42,15 @@ export default function Cart() {
       <div className={cartCss.total}>
         <h2>Total: ${price}</h2>
       </div>
+      <div className={cartCss.checkout}>
+        {cartItems.length > 0 && (
+          <form className={cartCss.form}>
+            <input type="text" placeholder="Name" />
+            <input type="email" placeholder="Email" />
+            <button className={cartCss.checkoutButton}>Checkout</button>
+          </form>
+        )}
+      </div>
     </div>
   );
 }
