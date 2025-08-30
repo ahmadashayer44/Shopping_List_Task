@@ -11,49 +11,62 @@
 
 .itemsContainer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
   gap: 20px;
-  overflow-x: scroll;
+  overflow-y: scroll;
   padding: 10px;
   width: 100%;
   scroll-behavior: smooth;
   scrollbar-width: thin;
   scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+  height: 200px;
 }
 
 .item {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   position: relative;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
   padding: 10px;
   margin-right: 20px;
-  width: 400px;
+  width: 300px;
+}
+.item h2 {
+  margin: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
 }
 .image {
-  width: 250px;
-  height: 250px;
+  width: 50px;
+  height: 50px;
 }
 .item p {
   margin-top: 10px;
   font-weight: bold;
   font-size: 18px;
   color: #333;
+  margin: 0;
 }
 .removeItem {
   position: absolute;
   top: 0;
   right: 0;
   border: none;
-  background-color: #ff0000;
-  color: white;
+  color: red;
+  background-color: transparent;
   cursor: pointer;
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 700;
   border-radius: 5px;
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
+  transition: color 0.3s ease-in-out;
+}
+.removeItem:hover {
+  color: #d65151;
 }
 .form {
   display: flex;
@@ -82,4 +95,10 @@
   font-size: 16px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
   font-weight: 700;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
