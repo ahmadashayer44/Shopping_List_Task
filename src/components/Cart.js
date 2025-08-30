@@ -26,15 +26,19 @@ export default function Cart() {
       <div className={cartCss.itemsContainer}>
         {cartItems.map((item) => (
           <div className={cartCss.item}>
-            <h2>{item.name}</h2>
             <img className={cartCss.image} src={item.image} alt={item.name} />
-            <p>{item.price}</p>
-            <p>Quantity: {item.quantity}</p>
+            <h2>{item.name}</h2>
+            <div className={cartCss.details}>
+              {" "}
+              <p>{item.price}</p>
+              <p>Quantity: {item.quantity}</p>
+            </div>
+
             <button
               className={cartCss.removeItem}
               onClick={() => dispatch({ type: "REMOVE", item: item })}
             >
-              -
+              x
             </button>
           </div>
         ))}
