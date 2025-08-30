@@ -1,9 +1,12 @@
 import "./App.css";
-import Products from "./components/Products";
+import Main from "./pages/Main.js";
+import ContextProvider from "./Context.js";
 function App() {
   return (
     <div className="App">
-      <Products />
+      <ContextProvider>
+        <Main />
+      </ContextProvider>
     </div>
   );
 }
