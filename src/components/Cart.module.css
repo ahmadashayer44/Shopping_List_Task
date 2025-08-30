@@ -55,3 +55,31 @@
   width: 40px;
   height: 40px;
 }
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.form input {
+  width: 60%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  color: #333;
+  outline: none;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+}
+.checkoutButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  font-weight: 700;
+}
