@@ -5,6 +5,10 @@ export default function Cart() {
   const dispatch = useItemsDispatch();
   const items = useItems();
   let cartItems = [...items];
+  let price = 0;
+  cartItems.map((item) => {
+    price += Number(item.price.split("$")[1]);
+  });
   console.log(cartItems);
   cartItems = cartItems.reduce((acc, item) => {
     const exsitingItem = acc.find((i) => i.id === item.id);
@@ -34,6 +38,9 @@ export default function Cart() {
             </button>
           </div>
         ))}
+      </div>
+      <div className={cartCss.total}>
+        <h2>Total: ${price}</h2>
       </div>
     </div>
   );
