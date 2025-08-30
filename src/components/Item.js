@@ -8,6 +8,7 @@ export default function Items({ item }) {
       <h2>{name}</h2>
       <img src={image} alt={name} />
       <p>{price}</p>
+      <button>Add to Cart</button>
     </div>
   );
 }
