@@ -1,6 +1,8 @@
 import cartCss from "./Cart.module.css";
 import { useItems } from "../Context";
+import { useItemsDispatch } from "../Context";
 export default function Cart() {
+  const dispatch = useItemsDispatch();
   const items = useItems();
   let cartItems = [...items];
   console.log(cartItems);
@@ -16,6 +18,7 @@ export default function Cart() {
   return (
     <div className={cartCss.cart}>
       <h1>Cart</h1>
+      {cartItems.length === 0 && <h2>Cart is empty</h2>}
       <div className={cartCss.itemsContainer}>
         {cartItems.map((item) => (
           <div className={cartCss.item}>
@@ -23,7 +26,12 @@ export default function Cart() {
             <img className={cartCss.image} src={item.image} alt={item.name} />
             <p>{item.price}</p>
             <p>Quantity: {item.quantity}</p>
-            <button className={cartCss.removeItem}>-</button>
+            <button
+              className={cartCss.removeItem}
+              onClick={() => dispatch({ type: "REMOVE", item: item })}
+            >
+              -
+            </button>
           </div>
         ))}
       </div>

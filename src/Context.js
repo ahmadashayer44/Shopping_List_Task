@@ -21,5 +21,12 @@ function reducerFunction(state, action) {
   switch (action.type) {
     case "ADD":
       return [...state, action.item];
+    case "REMOVE":
+      const index = state.findIndex((item) => item.id === action.item.id);
+      const newState = [...state];
+      if (index !== -1) {
+        newState.splice(index, 1);
+        return newState;
+      }
   }
 }
